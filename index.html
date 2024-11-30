@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отслеживание кликов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #buttonContainer {
+            display: inline-block;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Отслеживание кликов на кнопки</h1>
+    <div id="buttonContainer">
+        <button data-id="1">Кнопка 1</button>
+        <button data-id="2">Кнопка 2</button>
+        <button data-id="3">Кнопка 3</button>
+        <button data-id="4">Кнопка 4</button>
+    </div>
+
+    <script>
+        const buttonContainer = document.getElementById('buttonContainer');
+
++        buttonContainer.addEventListener('click', function(event) {
+            if (event.target.tagName === 'BUTTON') {
+                const buttonId = event.target.getAttribute('data-id');
+                alert(`Вы нажали на Кнопку ${buttonId}`);
+            }
+        });
+    </script>
+</body>
+</html>
